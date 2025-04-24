@@ -1,0 +1,17 @@
+CREATE ROLE ShallowViewCollab IN ROLE Human;
+
+CREATE USER adrioh
+	WITH BYPASSRLS
+	PASSWORD NULL
+	IN ROLE ShallowViewCollab;
+CREATE USER fa
+	WITH BYPASSRLS
+	PASSWORD NULL
+	IN ROLE ShallowViewCollab;
+CREATE USER soxnafaty
+	WITH BYPASSRLS
+	PASSWORD NULL
+	IN ROLE ShallowViewCollab;
+
+CREATE DATABASE ShallowView
+	OWNER ShallowViewCollab;
