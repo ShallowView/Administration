@@ -1,17 +1,18 @@
-CREATE ROLE ShallowViewCollab IN ROLE Human;
+CREATE ROLE SVCollaborator IN ROLE Client;
 
 CREATE USER adrioh
 	WITH BYPASSRLS
 	PASSWORD NULL
-	IN ROLE ShallowViewCollab;
+	IN ROLE SVCollaborator;
 CREATE USER fa
 	WITH BYPASSRLS
 	PASSWORD NULL
-	IN ROLE ShallowViewCollab;
+	IN ROLE SVCollaborator;
 CREATE USER soxnafaty
 	WITH BYPASSRLS
 	PASSWORD NULL
-	IN ROLE ShallowViewCollab;
+	IN ROLE SVCollaborator;
 
-CREATE DATABASE ShallowView
-	OWNER ShallowViewCollab;
+CREATE DATABASE ShallowView OWNER SVCollaborator;
+REVOKE ALL PRIVILEGES ON DATABASE ShallowView FROM PUBLIC;
+GRANT ALL PRIVILEGES ON DATABASE ShallowView TO SVCollaborator, Admin;
